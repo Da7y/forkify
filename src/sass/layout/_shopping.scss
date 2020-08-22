@@ -1,0 +1,77 @@
+.shopping {
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 50em) {
+    grid-column: 1/4;
+  }
+
+  &__list {
+    list-style: none;
+    max-height: 77rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid #f2efee;
+    position: relative;
+  }
+  &__count {
+    flex: 0 0 7.5rem;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #f2efee;
+    border-radius: 3px;
+    margin-right: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+
+    & input {
+      color: inherit;
+      font-family: inherit;
+      font-size: 1.2rem;
+      text-align: center;
+      border: none;
+      width: 3.7rem;
+      border-radius: 3px;
+    }
+    & input:focus {
+      outline: none;
+      background-color: #f2efee;
+    }
+    & p {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__description {
+    flex: 1;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+    margin-right: 1.5rem;
+  }
+  &__delete {
+    margin-top: 0.5rem;
+    position: absolute;
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #fff 40%,
+      #fff 100%
+    );
+    width: 3.75rem;
+    padding-left: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  .shopping__item:hover .shopping__delete {
+    opacity: 1;
+    visibility: visible;
+  }
+}
